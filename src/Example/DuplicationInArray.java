@@ -1,4 +1,9 @@
 package Example;
+
+import java.util.HashMap;
+import java.util.Map;
+
+
 /**
  * How do you find duplication in array? 
  * @author 85268
@@ -7,9 +12,7 @@ package Example;
 public class DuplicationInArray {
 	public boolean duplicate(int[] arr){
 		
-		if(arr == null || arr.length<=0){
-			return false;
-		}
+		if(arr == null || arr.length<=0) throw new RuntimeException("Invalid Input");
 		
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] < 0 || arr[i] > arr.length-1) {
@@ -30,12 +33,53 @@ public class DuplicationInArray {
 				}
 			}
 		}
+		//Time Complexity O(n^2)  Space Complexity O(1)
 		return false;
+	}
+	
+	//Double Cycle
+	public int duplicate2(int[] arr){
+		if(arr == null || arr.length<=0) throw new RuntimeException("Invalid Input");
+		
+		int result = -1;
+		
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = i+1; j < arr.length; j++) {
+				if (arr[i] == arr[j]) {
+					return arr[i];
+				}
+			}
+		}
+		
+		//Time Complexity O(/Space Complexity O(1)
+		return result;
+	}
+	
+	//Use Assistant Space 
+	public int duplicate3(int [] arr){
+		int result = -1;
+		
+		if(arr == null || arr.length<=0) throw new RuntimeException("Invalid Input"); 
+		
+//		Map<Integer , Integer> map = new HashMap<>();
+		int[] entrys = new int[arr.length];
+		
+		for (int i = 0; i < arr.length; i++) {
+			entrys[arr[i]] +=1;
+			if (entrys[arr[i]]>1) {
+				result = arr[i];
+				break;
+			}
+		}
+		return result ;
 	}
 	
 	public static void main(String[] args) {
 		int [] arr= {2,3,1,0,2,5,3};
 		DuplicationInArray test = new DuplicationInArray();
-		test.duplicate(arr);
+		
+		System.out.println(test.duplicate(arr));
+		System.out.println(test.duplicate2(arr));
+		System.out.println(test.duplicate3(arr));
 	}
 }
