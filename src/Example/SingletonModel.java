@@ -8,6 +8,7 @@ package Example;
 public class SingletonModel {
 	/**
      * 单例模式，懒汉式，线程安全
+     * 只能在单线程中使用
      */
     public static class Singleton {
         private final static Singleton INSTANCE = new Singleton();
@@ -23,6 +24,7 @@ public class SingletonModel {
 
     /**
      * 单例模式，饿汉式，线程不安全
+     * 
      */
     public static class Singleton2 {
         private static Singleton2 instance = null;
@@ -43,6 +45,7 @@ public class SingletonModel {
 
     /**
      * 单例模式，饿汉式，线程安全，多线程环境下效率不高
+     * 时间效率低
      */
     public static class Singleton3 {
         private static Singleton3 instance = null;
@@ -109,6 +112,7 @@ public class SingletonModel {
 
     /**
      * 静态内部类，使用双重校验锁，线程安全【推荐】
+     * 代码较为复杂，容易出错。
      */
     public static class Singleton7 {
         private volatile static Singleton7 instance = null;
@@ -125,7 +129,6 @@ public class SingletonModel {
                     }
                 }
             }
-
             return instance;
         }
     }
