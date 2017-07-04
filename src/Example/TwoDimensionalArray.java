@@ -36,6 +36,7 @@ public class TwoDimensionalArray {
 				row ++;
 			}
 			//除了从右上角开始查，还可以从左下角（如果Number大于这个数列向右推移） 等等。
+			//空间复杂度O(1) 时间复杂度O(1)
 		}
 		return false;
 	}

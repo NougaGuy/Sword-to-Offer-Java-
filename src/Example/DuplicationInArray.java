@@ -6,10 +6,11 @@ import java.util.Map;
 
 /**
  * How do you find duplication in array? 
- * @author 85268
+ * @author NougaGuy
  *
  */
 public class DuplicationInArray {
+	
 	public boolean duplicate(int[] arr){
 		
 		if(arr == null || arr.length<=0) throw new RuntimeException("Invalid Input");
@@ -33,7 +34,7 @@ public class DuplicationInArray {
 				}
 			}
 		}
-		//Time Complexity O(n^2)  Space Complexity O(1)
+		//Time Complexity O(n)  Space Complexity O(1)
 		return false;
 	}
 	
@@ -51,7 +52,7 @@ public class DuplicationInArray {
 			}
 		}
 		
-		//Time Complexity O(/Space Complexity O(1)
+		//Time Complexity O(N^2) Space Complexity O(1)
 		return result;
 	}
 	
@@ -65,6 +66,7 @@ public class DuplicationInArray {
 		int[] entrys = new int[arr.length];
 		
 		for (int i = 0; i < arr.length; i++) {
+			//把arr[i]的值当成entrys的key value当作次数，若value大于1 则表明有重复，返回。
 			entrys[arr[i]] +=1;
 			if (entrys[arr[i]]>1) {
 				result = arr[i];
