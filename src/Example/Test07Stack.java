@@ -22,6 +22,8 @@ public class Test07Stack {
 		public MList(){
 			
 		}
+		
+		
 		public void appendTail(T t){
 			stack1.add(t);
 		}
