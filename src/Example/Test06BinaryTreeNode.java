@@ -1,9 +1,11 @@
 package Example;
 /**
- * 
  * @author NougaGuy
  *Date:17/7/5
  *Declaration : All Rights Reserved !!
+ *
+ *Review：SingletonModel、SapceReplaceArray
+ *Book P65 How do you find next node in BinaryTree
  */
 public class Test06BinaryTreeNode {
 	/**
