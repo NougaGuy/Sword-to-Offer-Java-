@@ -3,7 +3,7 @@ package Example;
  * @author NougaGuy
  *Date:7/7
  *Declaration: All Rights Reserved!
- *review：
+ *review：DuplicationInArray
  */
 public class Test08MinInArray {
 	/**
