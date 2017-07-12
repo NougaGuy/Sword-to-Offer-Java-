@@ -3,6 +3,8 @@ package Example;
  * @author 85268
  *Date:17/7/11
  *Declaration: All Rights Reserved ! 
+ *
+ *Review: Test15OneInBinary
  */
 public class Test16PowFunctionOfC {
 	
