@@ -9,8 +9,8 @@ public class Test16PowFunctionOfC {
 	/**
 	 * 实现函数double Power（double base， int exponent	） 求出bsae的exponent次方
 	 * 不能使用函数库，不需要考虑大数问题。
-	 * @param base	指次
-	 * @param exponent	幂
+	 * @param base	底
+	 * @param exponent 指数
 	 * @return 结果
 	 */
 	public static double power(double base,int exponent){
@@ -24,48 +24,30 @@ public class Test16PowFunctionOfC {
 			return 1;
 		}
 		
-		//指数的绝对值
-		long exp = exponent;
-		if(exponent < 0 ){
-			exp = - exp;
+		if(exponent >> 1 == 0){ //偶数
+			int exponent_1 = exponent >> 1;
+			double tmp = power(base,exponent_1);
+			return tmp * tmp;
+		} else{ //非偶数
+			int exponent_2 = exponent - 1;  //-1后就是偶数
+			double tmp = power(base,exponent_2);
+			return tmp * base; //最后还有先开始减掉的一个base
 		}
-		//求幂次方
-		double result = powerWithUnsignedExponent(base,exponent);
-		//指数是负数，要进行求倒数
-		if(exponent < 0){
-			result = 1/result;
-		}
-		return result;
 	}
-	
+
 	/**
-	 * 求一个数的正整数次幂，不考虑溢出
+	 * 边界，负面都没有考虑.
 	 * @param base
 	 * @param exponent
-	 * @return 结果
+	 * @return
 	 */
-	public static double powerWithUnsignedExponent(double base, int exponent){
-		//如果指数为0，返回1
-		if(exponent == 0){
-			return 1;
-		}
-		//指数为1，返回底数。
-		if(exponent == 1){
-			return base;
-		}
-		//递归一半的值
-		double result = powerWithUnsignedExponent(base,exponent>>2);
-		
-		//求最终的值，如果是奇数就还要乘一次底数
-		result *= result;
-		
-		if(exponent % 2 != 0 ){
+	public static double power1(float base, int exponent){
+		double result = 1.0;
+		for (int i = 1; i < exponent; i++) {
 			result *= base;
 		}
-		
 		return result;
 	}
-	
 	public static void main(String[] args) {
 		System.out.println(power(2,4));
 	}
