@@ -4,8 +4,13 @@ package Example;
  * @author 85268
  *	Date : 2017/7/1
  *	Description : All Rights reserves
+ *  Review:7/18
  */
-public class SingletonModel {
+public class Test02SingletonModel {
+	/**
+	 * 实现单例(Singleton)模式
+	 * 隐藏构造器，只能调用单实例。
+	 */
 	/**
      * 单例模式，懒汉式，线程安全
      * 只能在单线程中使用

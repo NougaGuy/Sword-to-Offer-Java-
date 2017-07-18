@@ -18,7 +18,7 @@ public class Test18DelNode {
         head.next.next.next = new ListNode();
         head.next.next.next.value = 4;
 
-        ListNode middle = head.next.next.next.next = new ListNode();
+       /* ListNode middle = head.next.next.next.next = new ListNode();
         head.next.next.next.next.value = 5;
 
         head.next.next.next.next.next = new ListNode();
@@ -32,21 +32,21 @@ public class Test18DelNode {
 
         ListNode last = head.next.next.next.next.next.next.next.next = new ListNode();
         head.next.next.next.next.next.next.next.next.value = 9;
-
+*/
         head = deleteNode(head, null); // 删除的结点为空
         printList(head);
         ListNode node = new ListNode();
         node.value = 12;
 
-        head = deleteNode(head, head); // 删除头结点
+      head = deleteNode(head, head); // 删除头结点
         printList(head);
-        head = deleteNode(head, last); // 删除尾结点
+        /*  head = deleteNode(head, last); // 删除尾结点
         printList(head);
         head = deleteNode(head, middle); // 删除中间结点
         printList(head);
 
         head = deleteNode(head, node); // 删除的结点不在链表中
-        printList(head);
+        printList(head);*/
 	}
 	
 	/**
@@ -83,17 +83,21 @@ public class Test18DelNode {
 			ListNode tmp = head; 
 			//找待删除的元素的前驱
 			while(tmp.next != toBeDeleted){
+				//这个时候的tmp是下一个了。
 				tmp = tmp.next;
 			}
 			//删除待节点
 			tmp.next = null;
+			toBeDeleted = null ;
 		}
 		//在多个节点的情况下，如果删除的是某个中间节点
 		else{
 			//将下一个节点的值输入当前待删除的节点
-			toBeDeleted.value = toBeDeleted.next.value;
+			ListNode tmpN = toBeDeleted.next;
+			toBeDeleted.value = tmpN.value;
 			//待删除的节点的下一个指向原来待删除引号的下下个节点，即将待删除的下一个节点删除
-			toBeDeleted.next = toBeDeleted.next.next;
+			toBeDeleted.next = tmpN.next;
+			tmpN = null ;
 		}
 		
 		return head;
@@ -104,10 +108,13 @@ public class Test18DelNode {
 	 * @param head
 	 */
 	public static void printList(ListNode head){
+		StringBuilder sb = new StringBuilder();
 		while(head != null){
-			System.out.print(head.value + "--");
+			sb.append(head.value +"-");
+			//接下来一个
+			head = head.next;
 		}
-		System.out.println("null");
+		System.out.println(sb.toString());
 	}
 	
 }
