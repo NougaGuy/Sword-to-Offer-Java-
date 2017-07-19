@@ -5,7 +5,7 @@ package Example;
  * @author NougaGuy
  *Date:2017/7/3
  */
-public class SpaceReplaceInArray {
+public class Test05SpaceReplaceInArray {
 	/**
 	 * 
 	 * @param string  Need to replace array 

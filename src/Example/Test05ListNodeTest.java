@@ -7,7 +7,7 @@ import java.util.Stack;
  * @author Nouga
  *Date:2017/7/4
  */
-public class ListNodeTest {
+public class Test05ListNodeTest {
 	/**
 	 * 结点对象
 	 * @author 85268
