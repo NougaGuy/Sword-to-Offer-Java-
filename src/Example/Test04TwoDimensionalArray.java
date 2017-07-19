@@ -1,10 +1,10 @@
 package Example;
 
 /**
- * 
  * @author NougaGuy Date:2017/7/3 Declaration:All Rights Reserved !!
+ * 二维数组：每一行都是递增，每一列都是递增。
  */
-public class TwoDimensionalArray {
+public class Test04TwoDimensionalArray {
 	/**
 	 * How do you find this number you just input in two-dimensional array
 	 * 1 2 8 9 
