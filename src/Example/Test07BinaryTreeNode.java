@@ -35,6 +35,16 @@ public class Test07BinaryTreeNode {
 		return construct(preorder, 0 , preorder.length-1,inorder,0,inorder.length-1);
 	}
 	
+	/**
+	 * 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
+	 * @param preorder 前序遍历
+	 * @param ps	前序遍历的开始位置
+	 * @param pe	前序遍历的结束位置
+	 * @param inorder	中序遍历
+	 * @param is	中序遍历的开始位置
+	 * @param ie	中序遍历的结束位置
+	 * @return	树的根节点
+	 */
 	public static BinaryTreeNode construct(int[] preorder,int ps,int pe,int[] inorder,int is ,int ie){
 		//There is no variable to doing  
 		if(ps>pe){
