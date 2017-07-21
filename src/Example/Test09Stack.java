@@ -10,7 +10,7 @@ import java.util.Stack;
  *
  *Review:TwoDimensionalArray
  */
-public class Test07Stack {
+public class Test09Stack {
 	/**
 	 * 用两个栈模拟队列
 	 * 声明如下：实现它的两个函数appendTail和deleteHead
