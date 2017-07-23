@@ -4,7 +4,7 @@ package Example;
  *Date:17/7/8
  *Declaration: All Rights Reserved!
  */
-public class Test05Fibonacci {
+public class Test10Fibonacci {
 
 	/**
 	 * 写一个函数，输入N，求斐波那契（Fibonacci）数列的第N项
