@@ -5,7 +5,7 @@ package Example;
  *Declaration: All Rights Reserved!
  *review：DuplicationInArray
  */
-public class Test08MinInArray {
+public class Test11MinInArray {
 	/**
 	 * 一个旋转数组，求最小数
 	 * 旋转数组：数组中最开始的几个数移动到末尾
