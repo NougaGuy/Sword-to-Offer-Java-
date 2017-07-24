@@ -35,7 +35,12 @@ public class Test19Reg {
 			} // 匹配串还没结束
 			else {
 				if (pattern.charAt(p) == input.charAt(i) || pattern.charAt(p) == '.') {
-					return matchCore(input, i + 1, pattern, i + 2) || matchCore(input, i + 1, pattern, p)
+					return 
+							//匹配串向后移动一个位置，模式串向后移动两个位置
+							matchCore(input, i + 1, pattern, i + 2)
+							//匹配串向后移动一个位置，模式串不动
+							|| matchCore(input, i + 1, pattern, p)
+							//匹配串不移动，模式串向后移动两个位置
 							|| matchCore(input, i, pattern, p + 2);
 				}else{
 					return matchCore(input,i,pattern,p+2);
