@@ -101,5 +101,24 @@ public class Test20IsNumeric {
 		}
 		return index;
 	}
-	
+	public static void main(String[] args) {
+        System.out.println(isNumeric("100") + "[" + true + "]");
+        System.out.println(isNumeric("123.45e+6") + "[" + true + "]");
+        System.out.println(isNumeric("+500") + "[" + true + "]");
+        System.out.println(isNumeric("5e2") + "[" + true + "]");
+        System.out.println(isNumeric("3.1416") + "[" + true + "]");
+        System.out.println(isNumeric("600.") + "[" + true + "]");
+        System.out.println(isNumeric("-.123") + "[" + true + "]");
+        System.out.println(isNumeric("-1E-16") + "[" + true + "]");
+        System.out.println(isNumeric("100") + "[" + true + "]");
+        System.out.println(isNumeric("1.79769313486232E+308") + "[" + true + "]");
+        System.out.println();
+
+        System.out.println(isNumeric("12e") + "[" + false + "]");
+        System.out.println(isNumeric("1a3.14") + "[" + false + "]");
+        System.out.println(isNumeric("1+23") + "[" + false + "]");
+        System.out.println(isNumeric("1.2.3") + "[" + false + "]");
+        System.out.println(isNumeric("+-5") + "[" + false + "]");
+        System.out.println(isNumeric("12e+5.4") + "[" + false + "]");
+    }
 }
