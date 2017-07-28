@@ -75,9 +75,9 @@ public class Test22FindKthToTail {
 
         System.out.println(findKthToTail(head, 1).value); // 倒数第一个
         System.out.println(findKthToTail(head, 5).value); // 中间的一个
-        System.out.println(findKthToTail(head, 9).value); // 倒数最后一个就是顺数第一个
+//        System.out.println(findKthToTail(head, 9).value); // 倒数最后一个就是顺数第一个
 
-        System.out.println(findKthToTail(head, 10));
+//        System.out.println(findKthToTail(head, 10));
     }
 	public static class ListNode {
 		int value;
