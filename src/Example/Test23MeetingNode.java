@@ -1,4 +1,8 @@
 package Example;
+
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author Nouga
  * Date: 2017/7/31
@@ -56,5 +60,17 @@ public abstract class Test23MeetingNode {
 		return fast ;
 	}
 	
-	
+	/**
+	 * Set中的元素不可重复，环其实就是一个链表中重复的点，所以当Set出错的时候（有重复值了），就说明是个环入口了。
+	 * @param head
+	 * @return 环入口
+	 */
+	public static ListNode meetingNode(ListNode head) {
+		
+		Set<ListNode> set = new HashSet<>();
+		while(head.next != null && set.add(head)) {
+			head = head.next;
+		}
+		return head ;
+	}
 }
