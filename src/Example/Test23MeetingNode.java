@@ -66,7 +66,16 @@ public abstract class Test23MeetingNode {
 	 * @return 环入口
 	 */
 	public static ListNode meetingNode(ListNode head) {
-		
+		ListNode last = head;
+		ListNode fast = head;
+		while(fast.next!=null && last.next !=null){
+			fast = fast.next.next;
+			last = last.next;
+			if(last.next == null){
+				System.out.println("链表没有环");
+				break;
+			}
+		}
 		Set<ListNode> set = new HashSet<>();
 		while(head.next != null && set.add(head)) {
 			head = head.next;
