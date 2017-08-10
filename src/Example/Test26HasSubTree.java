@@ -37,14 +37,17 @@ public class Test26HasSubTree {
 		if (root1 == null) {
 			return false;
 		}
+		
+		//用一个Boolean来表示是否为子节点。
 		boolean result = false;
+		//如果两个根节点相同，则调用Match方法继续向下比。返回true就是子节点，反之false。
 		if (root1.value == root2.value) {
 			result = match(root1, root2);
 		}
 		if (result) {
 			return true;
 		}
-
+		//若是没有匹配成功根节点，递归继续向下找。
 		return hasSubTree(root1.left, root2) || hasSubTree(root1.right, root2);
 	}
 
@@ -55,24 +58,22 @@ public class Test26HasSubTree {
 	 * @return
 	 */
 	private static boolean match(BinaryTreeNode root1, BinaryTreeNode root2) {
-
+		//边界性检测、鲁棒性检查。
 		if (root1 == root2) {
 			return true;
 		}
-
 		if (root2 == null) {
 			return true;
 		}
-
 		if (root1 == null) {
 			return false;
 		}
-
+		//递归继续向下匹配。
 		if (root1.value == root2.value) {
 			return match(root1.left, root2.left) && match(root1.right, root2.right);
 
 		}
-
+		//没匹配成功
 		return false;
 	}
 
